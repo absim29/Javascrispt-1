@@ -1,27 +1,50 @@
 
-const product = document.querySelector(".containproduct")
-
 const queryString = document.location.search;
 
 const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
-console.log(id);
 
-export const ProdUrl = `https://api.noroff.dev/api/v1/square-eyes/${id}`;
+const ProdUrl = `https://api.noroff.dev/api/v1/square-eyes?id=${id}`;
 
-async function fetchMovie() {
-        const response = await fetch(ProdUrl);
-        const results = await response.json();
-        const movie = results;
 
-        console.log({results});
-    for (let i = 0; i < movie.length; i++) {
-        product.innerHTML += `<div>
-                            <h1>${movie[i].title}</h2>
-                            </div>`;
+const product = document.querySelector(".container");
+
+
+async function getMovie() {
+
+    try {
+        const answer = await fetch(ProdUrl);
+        const movie = await answer.json();
+        // const movie = result;
+        // product.innerHTML = "";
+        // product.innerHTML += `<div>
+        //                       <h1>${movie[title]}</h1>
+        //                       <p>${movie.description}</p>
+        //                       </div>`;
+        // for (let i = 0; i < movie.length; i++) {
+        //     // console.log(movies[i].id);
+        //     product.innerHTML += `<div>
+        //                           <h1>${movie[i].title}</h1>
+        //                           </div>`;
+        // }
+        createHtml(movie);
     }
+
+    catch(error) {
+        console.log(error);
+        // product.innerHTML = message("error", error);
+    }
+
+    // product.innerHTML = "";
 
 }
 
-fetchMovie();
+getMovie();
+
+function createHtml(movie) {
+    product.innerHTML = `<div class="containproduct">
+                        <h1>${movie.title}</h1>
+                        <p>${movie.description}</p>
+                        </div>`;
+}
