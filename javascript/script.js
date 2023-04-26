@@ -1,9 +1,12 @@
+import { ProdUrl } from "./product.js";
+
 const baseUrl = `https://api.noroff.dev/api/v1`;
 const url = `${baseUrl}/square-eyes`;
 
+
 const movieList = document.querySelector(".movie-container");
 
-const title = document.querySelector("h2");
+
 
 async function getData() {
     const response = await fetch(url);
@@ -13,14 +16,15 @@ async function getData() {
     movieList.innerHTML = "";
 
     for (let i = 0; i < movies.length; i++) {
-        console.log(movies[i].title);
-        movieList.innerHTML += `<div class="item">
-                                <h2> ${movies[i].title} </h2>
-                                <p> ${movies[i].description}</p> </div>`;
+        console.log(movies[i].id);
+        movieList.innerHTML += `<div>
+                                <a href="${url + movies[i].id}"><img class="item" id="img" src="${movies[i].image}"></a>
+                                </div>`;
     }
-
+    
     console.log({movies});
     // return movieList;
+   
 }
 
 getData();

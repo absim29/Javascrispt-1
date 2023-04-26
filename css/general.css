@@ -253,6 +253,11 @@ a {
 
 
 /** Image styling **/
+#img {
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+}
 .img {
     max-width: fit-content;
     max-height: fit-content;
@@ -328,10 +333,10 @@ a {
     justify-content: space-evenly;
     align-content: center;
 }
-
+/* 
 .movie-container > * {
     flex: 1;
-}
+} */
 
 .movie-container a {
     display: flex;
