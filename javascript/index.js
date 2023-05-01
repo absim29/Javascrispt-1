@@ -1,6 +1,6 @@
-import {getData} from "./videos.js";
+import getData from './videos.js';
 
-console.log(getData);
+// console.log(getData);
 
 const carouselImg = document.querySelector(".carousel");
 
