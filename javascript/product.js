@@ -29,7 +29,7 @@ getMovie();
 async function createHtml() {
     const movie = await getMovie();
     console.log({movie});
-    product.innerHTML = "";
+    product.innerHTML = '';
     product.innerHTML =
         `<section class="container">
             <div class="containproduct">

@@ -25,7 +25,7 @@ getData();
 async function renderHtml() {
     const movies = await getData();
     // console.log({movies});
-    movieList.innerHTML = "";
+    movieList.innerHTML = '';
     movies.forEach(function(element, index) {
         movieList.innerHTML += 
             `<div>
@@ -34,5 +34,5 @@ async function renderHtml() {
     })
         
     };
-    
+
 renderHtml();
