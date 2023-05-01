@@ -15,8 +15,8 @@ async function getMovie() {
 
     try {
         const answer = await fetch(ProdUrl);
-        const movie = await answer.json();
-        // const movie = result;
+        const result = await answer.json();
+        const movie = result;
         // product.innerHTML = "";
         // product.innerHTML += `<div>
         //                       <h1>${movie[title]}</h1>
@@ -29,6 +29,7 @@ async function getMovie() {
         //                           </div>`;
         // }
         createHtml(movie);
+        console.log(movie);
     }
 
     catch(error) {
@@ -38,13 +39,14 @@ async function getMovie() {
 
     // product.innerHTML = "";
 
+    function createHtml(movie) {
+        product.innerHTML = `<div class="containproduct">
+                            <h1>${movie.title}</h1>
+                            <p>${movie.description}</p>
+                            </div>`;
+    }
 }
 
 getMovie();
 
-function createHtml(movie) {
-    product.innerHTML = `<div class="containproduct">
-                        <h1>${movie.title}</h1>
-                        <p>${movie.description}</p>
-                        </div>`;
-}
+
