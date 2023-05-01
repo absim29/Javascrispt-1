@@ -172,6 +172,16 @@ p {
     text-align: left;
 }
 
+#sale {
+    font-size: 50px;
+    color: var(--yellow);
+}
+
+#reduced-price {
+    text-decoration: line-through;  
+}
+
+
 
 /** Carousel **/
 .carousel {

@@ -22,15 +22,17 @@ async function getMovie() {
     catch(error) {
         console.error({error:'An error has occurred in the fetch api'})
     }
+
 }
 
 getMovie();
+
 
 async function createHtml() {
     const movie = await getMovie();
     console.log({movie});
     product.innerHTML = '';
-    product.innerHTML =
+    product.innerHTML +=
         `<section class="container">
             <div class="containproduct">
                 <h1>${movie.title}</h1>
@@ -38,15 +40,36 @@ async function createHtml() {
                 <p>Release date: ${movie.released}</p>
                 <p>Rated: ${movie.rating}</p>
                 <p>Genre: ${movie.genre}</p>
-                <h2>$ ${movie.price}</h2>
+                <h2 id="price"></h2>
+                <h3 id="sale"></h3>
             </div>
             <div class="contain-item">
                 <img src="${movie.image}" alt="Cover image of the movie" class="img">
                 <a href="cart.html" class="cta" id="ctaproduct">BUY NOW</a>
             </div>
         </section>`;
+
+    document.title = movie.title;
+
+    if (movie.onSale === true){
+
+        document.getElementById('sale').innerHTML += `<h3 id="sale">$ ${movie.discountedPrice}</h3>`;
+        document.getElementById('price').innerHTML += `<h2 id="reduced-price">$ ${movie.price}</h2>`;
+    }
+
+    else {
+        document.getElementById('price').innerHTML += `<h2>$ ${movie.price}</h2>`;
+        document.getElementById('sale').innerHTML = ``;
+    }
+
 }
 
 createHtml();
+
+// function Sale() {
+//     if (movie.onSale === true){
+//         product.innerHTML.replace = `<h3 id="sale">$ ${movie.discountedPrice}</h3>`
+//     }
+// }
 
 
