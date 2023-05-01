@@ -5,8 +5,6 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
-console.log(id);
-
 const ProdUrl = `https://api.noroff.dev/api/v1/square-eyes/${id}`;
 
 
@@ -30,7 +28,7 @@ getMovie();
 
 async function createHtml() {
     const movie = await getMovie();
-    console.log({movie});
+
     product.innerHTML = '';
     product.innerHTML +=
         `<section class="container">
@@ -65,11 +63,5 @@ async function createHtml() {
 }
 
 createHtml();
-
-// function Sale() {
-//     if (movie.onSale === true){
-//         product.innerHTML.replace = `<h3 id="sale">$ ${movie.discountedPrice}</h3>`
-//     }
-// }
 
 
