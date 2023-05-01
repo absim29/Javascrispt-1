@@ -1,4 +1,4 @@
-import getData from './videos.js';
+import getData from "./videos.js";
 
 // console.log(getData);
 
