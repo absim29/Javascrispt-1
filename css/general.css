@@ -263,6 +263,10 @@ a {
     height: 600px;
 }
 
+.imghome {
+    max-height: 360px;
+}
+
 .cartimg {
     max-height: 170px;
     padding: 10px;

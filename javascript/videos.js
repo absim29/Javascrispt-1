@@ -1,4 +1,4 @@
-// import { ProdUrl } from "./product.js";
+export {getData};
 
 const baseUrl = `https://api.noroff.dev/api/v1`;
 const url = `${baseUrl}/square-eyes`;
@@ -21,6 +21,7 @@ async function getData() {
 
 getData();
 
+
 async function renderHtml() {
     const movies = await getData();
     // console.log({movies});
@@ -33,4 +34,5 @@ async function renderHtml() {
     })
         
     };
-    renderHtml();
+    
+renderHtml();
