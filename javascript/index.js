@@ -1,12 +1,9 @@
-import getData from "./videos.js";
-
-// console.log(getData);
+import {getData} from "./videos.js";
 
 const carouselImg = document.querySelector(".carousel");
 
-async function carousel() {
+async function carousel() {  
     const images = await getData();
-    // console.log({images});
     carouselImg.innerHTML = '';
     images.forEach(function(element, index) {
         carouselImg.innerHTML += 

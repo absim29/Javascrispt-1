@@ -1,14 +1,9 @@
-// export default getData;
-
 const baseUrl = `https://api.noroff.dev/api/v1`;
 const url = `${baseUrl}/square-eyes`;
 
-
 const movieList = document.querySelector(".movie-container");
 
-
-
-export default async function getData() {
+export async function getData() {
     try {
         const response = await fetch(url);
         const results = await response.json();
@@ -19,12 +14,8 @@ export default async function getData() {
     }
 }
 
-// getData();
-
-
 async function renderHtml() {
     const movies = await getData();
-    // console.log({movies});
     movieList.innerHTML = '';
     movies.forEach(function(element, index) {
         movieList.innerHTML += 

@@ -1,15 +1,10 @@
-
 const queryString = document.location.search;
-
 const params = new URLSearchParams(queryString);
-
 const id = params.get("id");
 
 const ProdUrl = `https://api.noroff.dev/api/v1/square-eyes/${id}`;
 
-
 const product = document.querySelector(".container");
-
 
 async function getMovie() {
     try {
@@ -22,8 +17,6 @@ async function getMovie() {
     }
 
 }
-
-getMovie();
 
 
 async function createHtml() {
