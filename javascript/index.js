@@ -1,4 +1,4 @@
-import {getData} from "./videos.js";
+import {getData} from "./APIcalls.js";
 
 const carouselImg = document.querySelector(".carousel");
 
@@ -13,4 +13,3 @@ async function carousel() {
     };
     
 carousel();
-

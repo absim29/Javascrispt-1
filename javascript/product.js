@@ -18,7 +18,6 @@ async function getMovie() {
 
 }
 
-
 async function createHtml() {
     const movie = await getMovie();
 
@@ -56,5 +55,3 @@ async function createHtml() {
 }
 
 createHtml();
-
-

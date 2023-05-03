@@ -1,18 +1,6 @@
-const baseUrl = `https://api.noroff.dev/api/v1`;
-const url = `${baseUrl}/square-eyes`;
+import {getData} from "./APIcalls.js";
 
 const movieList = document.querySelector(".movie-container");
-
-export async function getData() {
-    try {
-        const response = await fetch(url);
-        const results = await response.json();
-        return results;
-    }
-    catch(error) {
-        console.error({error:'An error has occurred in the fetch api'})
-    }
-}
 
 async function renderHtml() {
     const movies = await getData();
