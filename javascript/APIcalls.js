@@ -1,5 +1,5 @@
 const baseUrl = `https://api.noroff.dev/api/v1`;
-const url = `${baseUrl}/square-eyes`;
+export const url = `${baseUrl}/square-eyes/`;
 
 export async function getData() {
     try {
