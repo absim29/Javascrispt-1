@@ -1,4 +1,4 @@
-import {getData} from "./APIcalls.js";
+import {getData} from "./APIall.js";
 
 const carouselImg = document.querySelector(".carousel");
 

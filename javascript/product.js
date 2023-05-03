@@ -1,24 +1,6 @@
-import { url } from "./APIcalls.js";
-
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
-
-const ProdUrl = url + id;
+import {getMovie} from "./APIsingle.js";
 
 const product = document.querySelector(".container");
-
-async function getMovie() {
-    try {
-        const answer = await fetch(ProdUrl);
-        const result = await answer.json();
-        return result;
-    }
-    catch(error) {
-        console.error({error:'An error has occurred in the fetch api'})
-    }
-
-}
 
 async function createHtml() {
     const movie = await getMovie();
